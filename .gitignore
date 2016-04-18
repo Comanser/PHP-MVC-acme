@@ -1,7 +1,8 @@
 .vagrant/
 cache/
 vendor/
-composer.lock
 .env
+composer.lock
+phinx.yml
 .DS_Store
 zz_archive/
