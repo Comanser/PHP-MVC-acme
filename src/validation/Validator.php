@@ -41,12 +41,12 @@ class Validator {
               break;
 
             default:
-              # code...
+              $errors[] = "Comparator '" . $explode[0] . "' not supported!";
               break;
           }
         }
       } else {
-        $errors[] = "No '" . $name . "' parameter found in current request!";
+        $errors[] = "Parameter '" . $name . "' not found in current request!";
       }
     }
     return $errors;
