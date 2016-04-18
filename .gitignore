@@ -1,0 +1,7 @@
+.vagrant/
+cache/
+vendor/
+composer.lock
+.env
+.DS_Store
+zz_archive/
