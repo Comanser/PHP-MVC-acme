@@ -12,8 +12,6 @@ $router->map('GET', '/login', 'Acme\Controllers\RegisterController@getShowLoginP
 
 
 
-
-
 // Educational purpose
 $router->map('GET', '/yellow', 'Acme\Controllers\PageController@getShowLoginPage', 'yellow');
 
