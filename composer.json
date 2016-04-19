@@ -15,7 +15,8 @@
         "duncan3dc/blade": "3.0.*",
         "robmorgan/phinx": "0.4.4",
         "symfony/var-dumper": "^3.0",
-        "cocur/slugify": "^2.1"
+        "cocur/slugify": "^2.1",
+        "swiftmailer/swiftmailer": "@stable"
     },
     "autoload": {
       "psr-4": { "Acme\\": "src/" }

@@ -49,12 +49,8 @@ class RegisterController extends BaseController
     //$user-> = $_REQUEST[''];
     $user->save();
 
-    echo "Posted!";
-  }
-
-  public function getShowLoginPage() {
-    //echo $this->twig->render('login.html');
-    echo $this->blade->render("login");
+    header("Location: /success");
+    exit();
   }
 
   public function getTestDB() {

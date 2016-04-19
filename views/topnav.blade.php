@@ -14,8 +14,12 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-      </ul>
+        @if(Acme\auth\LoggedIn::user())
+          <li><a href="/logout">Logout</a></li>
+        @else
+          <li><a href="/login">Login</a></li>
+        @endif
+        </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>

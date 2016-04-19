@@ -1,8 +1,8 @@
 <?php
 namespace Acme\controllers;
 
-use duncan3dc\Laravel\BladeInstance;
 use Acme\models\Page;
+use duncan3dc\Laravel\BladeInstance;
 
 class PageController extends BaseController
 {
@@ -39,6 +39,7 @@ class PageController extends BaseController
         }
 
         if (strlen($browser_title) == 0) {
+            header("HTTP/1.0 404 Not Found");
             header("Location: /page-not-found");
             exit();
         }
@@ -56,7 +57,7 @@ class PageController extends BaseController
      */
     public function getShow404()
     {
-        //header("HTTP/1.0 404 Not Found");
+        header("HTTP/1.0 404 Not Found");
         echo $this->blade->render('page-not-found');
     }
 }
