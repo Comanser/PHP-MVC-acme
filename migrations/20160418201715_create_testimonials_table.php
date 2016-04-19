@@ -6,8 +6,8 @@ class CreateTestimonialsTable extends AbstractMigration
 {
   public function up()
   {
-      $users = $this->table('testimonials');
-      $users->addColumn('title', 'string')
+      $testim = $this->table('testimonials');
+      $testim->addColumn('title', 'string')
           ->addColumn('testimonial', 'text')
           ->addColumn('user_id', 'integer')
           ->addForeignKey('user_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade'])
