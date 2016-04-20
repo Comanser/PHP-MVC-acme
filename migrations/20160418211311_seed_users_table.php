@@ -10,10 +10,10 @@ class SeedUsersTable extends AbstractMigration
       $password_hash2 = password_hash('misio01', PASSWORD_DEFAULT);
 
       $this->execute("
-          insert into users (first_name, last_name, email, password)
+          insert into users (first_name, last_name, email, password, active)
           values
-          ('Trevor', 'Sawler', 'me@here.ca', '$password_hash1'),
-          ('Misio', 'Puszysty', 'misio@wp.pl', '$password_hash2')
+          ('Trevor', 'Sawler', 'me@here.ca', '$password_hash1', 1),
+          ('Misio', 'Puszysty', 'webmaster@dobrypasterz.org.pl', '$password_hash2', 1)
       ");
   }
 

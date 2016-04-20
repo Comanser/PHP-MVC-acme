@@ -14,7 +14,8 @@ class SeedPagesTable extends AbstractMigration
       $this->execute("
           insert into pages (browser_title, page_content, slug)
           values
-          ('Success', '<h1>Success</h1><p>Welcome to Acme!</p>', 'success')
+          ('Success', '<h1>Success</h1><p>Welcome to Acme!<br>
+          Please activate your account using link in message sent to you via email.</p>', 'success')
       ");
       $this->execute("
           insert into pages (browser_title, page_content, slug)

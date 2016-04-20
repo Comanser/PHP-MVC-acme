@@ -8,7 +8,6 @@ use Acme\auth\LoggedIn;
 
 class AuthenticationController extends BaseController
 {
-
     /**
      *
      * Shows the login page
@@ -43,20 +42,23 @@ class AuthenticationController extends BaseController
             $okay = false;
         }
 
-/*        if ($user->active == 0){
-            $okay = false;
-        }*/
-
-        if ($okay) {  // if valid log him
+        if ($okay) {  // if valid and
+          if ($user->active != 0) { // active
             $_SESSION['user'] = $user;
             header("Location: /");
             exit();
-        } else { // if not, redirect to login page
-            $_SESSION['msg'] = ["Invalid login!"];
-            echo $this->blade->render("login");
-            unset($_SESSION['msg']);
-            exit();
+          } else {
+            $msg = "User not activated";
+          }
+        } else { // if not valid
+          $msg = "Invalid login!";
         }
+
+        // Redirect to login page
+        $_SESSION['msg'] = [$msg];
+        echo $this->blade->render("login");
+        unset($_SESSION['msg']);
+        exit();
     }
 
     public function getLogout()

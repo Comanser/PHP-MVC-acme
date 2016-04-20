@@ -31,7 +31,7 @@ $router->map('GET', '/page-not-found', 'Acme\controllers\PageController@getShow4
 //$router->map('GET', '/[*]', 'Acme\controllers\PageController@getShowPage', 'generic_page');
 
 // Educational purpose
-$router->map('GET', '/yellow', 'Acme\Controllers\PageController@getShowLoginPage', 'yellow');
+$router->map('GET', '/yellow', 'Acme\Controllers\AuthenticationController@getShowLoginPage', 'yellow');
 $router->map('GET', '/testdb', 'Acme\Controllers\RegisterController@getTestDB', 'testdb');
 $router->map('GET', '/testuser', 'Acme\controllers\AuthenticationController@getTestUser', 'testuser');
 
@@ -47,6 +47,14 @@ $router->map('GET', '/test', function(){
 $router->map('GET', '/slug', function(){
   $slug = new Cocur\Slugify\Slugify();
   echo $slug->slugify('About Acme');
+});
+
+$router->map('GET', '/testemail', function(){
+  Acme\Email\SendEmail::sendEmail(
+    //'webmaster@dobrypasterz.org.pl',
+    'comanser@wp.pl',
+    'My test subject', 'My message');
+  echo "Sent email!";
 });
 
 // page routes cont.
