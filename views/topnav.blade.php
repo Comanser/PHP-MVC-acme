@@ -14,7 +14,9 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/register">Register</a></li>
+        <li><a href="/testimonials">Testimonials</a></li>
         @if(Acme\auth\LoggedIn::user())
+          <li><a href="/add-testimonial">Add a Testimonial</a></li>
           <li><a href="/logout">Logout</a></li>
         @else
           <li><a href="/login">Login</a></li>

@@ -9,10 +9,10 @@ $router->map('GET', '/verify-account', 'Acme\controllers\RegisterController@getV
 $router->map('GET', '/testimonials', 'Acme\controllers\TestimonialController@getShowTestimonials', 'testimonials');
 
 // logged in user routes
-/*if (Acme\auth\LoggedIn::user()) {
+if (Acme\auth\LoggedIn::user()) {
     $router->map('GET', '/add-testimonial', 'Acme\controllers\TestimonialController@getShowAdd', 'add_testimonial');
     $router->map('POST', '/add-testimonial', 'Acme\controllers\TestimonialController@postShowAdd', 'add_testimonial_post');
-}*/
+}
 
 // login/logout routes
 $router->map('GET', '/login', 'Acme\controllers\AuthenticationController@getShowLoginPage', 'login');
