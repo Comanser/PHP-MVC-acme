@@ -15,16 +15,18 @@ class AuthenticationController extends BaseController
      */
     public function getShowLoginPage()
     {
-        echo $this->blade->render("login");
+      echo $this->blade->render("login", [
+          'signer' => $this->signer,
+      ]);
     }
 
     public function postShowLoginPage()
     {
         //echo "Posted!"; exit;
-/*        if (!$this->signer->validateSignature($_POST['_token'])) {
+        if (!$this->signer->validateSignature($_POST['_token'])) {
             header('HTTP/1.0 400 Bad Request');
             exit();
-        }*/
+        }
 
         $okay = true;
         $email = $_REQUEST['email'];
@@ -56,7 +58,9 @@ class AuthenticationController extends BaseController
 
         // Redirect to login page
         $_SESSION['msg'] = [$msg];
-        echo $this->blade->render("login");
+        echo $this->blade->render("login", [
+            'signer' => $this->signer,
+        ]);
         unset($_SESSION['msg']);
         exit();
     }

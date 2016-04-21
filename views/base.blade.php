@@ -11,7 +11,7 @@
   </title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/assets/styles.css">
   @yield('css')
 </head>
 
@@ -31,6 +31,7 @@
 
   </div>
 
+<footer class="footer">
   <div class="row footer-background">
     <div class="col-sm-3">
       <div class="padding-left-8px">
@@ -47,6 +48,7 @@
       <img src="/assets/map-small.png" class="pull-right"/>
     </div>
   </div>
+</footer>
 
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
